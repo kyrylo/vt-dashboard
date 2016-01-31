@@ -59,6 +59,7 @@
   "nonew": true,
 
   "globals": {
-    "module": false
+    "module": false,
+    "__dirname": false
   }
 }
