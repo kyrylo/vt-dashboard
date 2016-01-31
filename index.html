@@ -2,6 +2,23 @@
 <html>
   <head>
     <title>Sample "Hello, World" Application</title>
+
+    <script src="js/WebSocketEventDispatcher.js">
+      function WebSocketEventDispatcher() {
+
+      }
+
+      var socket = new WebSocket('ws://127.0.0.1:7332/ws');
+      var webSocketEventDispatcher = new WebSocketEventDispatcher();
+
+      webSocketEventDispatcher.bind('ack')
+
+      socket.onmessage = function(event) {
+
+      }
+
+      socket.send('Connected');
+    </script>
   </head>
   <body>
     <p>This is the home page for the HelloWorld Web application. </p>
