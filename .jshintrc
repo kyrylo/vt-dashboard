@@ -10,7 +10,8 @@
   "loopfunc": true,
   "nonew": true,
   "esversion": 6,
-  "strict": true,
+  "strict": false,
+  "maxlen": 90,
 
   "globals": {
     "module": false,

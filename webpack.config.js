@@ -5,7 +5,11 @@ module.exports = {
     loaders: [
       {
         loader: 'babel-loader',
-        query: { presets: ['es2015'] }
+        query: {
+          presets: [
+            require.resolve('babel-preset-es2015')
+          ]
+        }
       }
     ]
   }
