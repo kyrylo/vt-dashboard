@@ -1,4 +1,4 @@
-class Config {
+export default class Config {
   set logger(loggerObject) {
     this._logger = loggerObject;
   }
@@ -7,5 +7,3 @@ class Config {
     return this._logger;
   }
 }
-
-export default Config;

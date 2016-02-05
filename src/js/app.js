@@ -21,7 +21,7 @@ class App {
   }
 }
 
-var app = new App();
+const app = new App();
 
 app.configure(function(config) {
   config.logger = logger;

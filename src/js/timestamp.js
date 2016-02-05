@@ -1,4 +1,4 @@
-class Timestamp {
+export default class Timestamp {
   constructor(unix_timestamp) {
     this.date = new Date(unix_timestamp);
   }
@@ -7,5 +7,3 @@ class Timestamp {
     return this.date.toLocaleTimeString();
   }
 }
-
-export default Timestamp;
