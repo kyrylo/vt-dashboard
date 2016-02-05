@@ -1,3 +1,5 @@
+import '../css/app.css';
+
 import logger from 'loglevel';
 
 import WSClient from './ws_client';

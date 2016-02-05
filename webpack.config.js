@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './src/app.js',
+  entry: './src/js/app.js',
   output: { path: __dirname, filename: 'bundle.js' },
   module: {
     loaders: [
@@ -10,7 +10,8 @@ module.exports = {
             require.resolve('babel-preset-es2015')
           ]
         }
-      }
+      },
+      { test: /\.css$/, loader: 'style!css' }
     ]
   }
 };
