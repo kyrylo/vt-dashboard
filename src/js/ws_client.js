@@ -1,6 +1,7 @@
+import logger from 'loglevel';
 import Timestamp from './timestamp';
 
-class WSClient {
+export default class WSClient {
   constructor(config) {
     this.config = config;
     this.socket = null;
@@ -15,26 +16,21 @@ class WSClient {
   }
 
   onopen(event) {
-    var timestamp = new Timestamp(event.timeStamp);
-    this.config.logger.debug(`[WSClient#onopen] [${timestamp}] Connected to` +
-                             ` the WebSocket server (${this.config.ws_server})`);
+    logger.debug(`[WSClient#onopen] [${new Timestamp(event.timeStamp)}] ` +
+                 `Connected to the WebSocket server (${this.config.ws_server})`);
   }
 
   onclose(event) {
-    var timestamp = new Timestamp(event.timeStamp);
-    this.config.logger.debug(`[WSClient#onclose] [${timestamp}] The WebSocket` +
-                             ` connection was closed (${event.code})`);
+    logger.debug(`[WSClient#onclose] [${new Timestamp(event.timeStamp)}] The ` +
+                 `WebSocket connection was closed (${event.code})`);
   }
 
   onmessage(event) {
-    var timestamp = new Timestamp(event.timeStamp);
-    this.config.logger.debug(`[WSClient#onmessage] [${timestamp}] ${event.data}`);
+    logger.debug(`[WSClient#onmessage] [${new Timestamp(event.timeStamp)}] ` +
+                 `${event.data}`);
   }
 
-  onerror(error) {
-    var timestamp = new Timestamp(event.timeStamp);
-    this.config.logger.error(`[WSClient#onerror] [${timestamp}] ${error}`);
+  onerror(event) {
+    logger.error(`[WSClient#onerror] [${new Timestamp(event.timeStamp)}] Error`);
   }
 }
-
-export default WSClient;

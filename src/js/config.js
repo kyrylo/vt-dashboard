@@ -1,9 +1,9 @@
 export default class Config {
-  set logger(loggerObject) {
-    this._logger = loggerObject;
+  set ws_server(url) {
+    this._ws_server = url;
   }
 
-  get logger() {
-    return this._logger;
+  get ws_server() {
+    return this._ws_server;
   }
 }
